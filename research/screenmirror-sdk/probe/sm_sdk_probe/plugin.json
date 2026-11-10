@@ -1,0 +1,11 @@
+{
+  "name": "sm_sdk_probe",
+  "kind": "feature",
+  "order": 0,
+  "loadable": true,
+  "symbol": "FEATURE_sm_sdk_probe",
+  "sources": ["probe.c"],
+  "author": "alan",
+  "version": "0.0.1",
+  "claims": []
+}

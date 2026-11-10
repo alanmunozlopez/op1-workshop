@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-10",
+  "upstream": "Hundekraft/op1-workshop",
+  "fork": "alanmunozlopez/op1-workshop",
+  "base_commit": "96114bdd233b81f3a1ed49f7b74069096aa6071a",
+  "branch": "research/screenmirror-sdk",
+  "sdk_version": "3.2.3",
+  "sdk_archive_sha256": "7a74872170bcb812750b65989184ef81fd06ab1fbb6c9066091a613162137033",
+  "release_id": "a909f630a6e723fc",
+  "compiler": "bfin-elf-gcc (GCC) 13.3.0",
+  "verdict": "Feasible port with reviewed core services; public SDK alone lacks required final-frame capture and SysEx transport",
+  "probe": {
+    "compiled": true,
+    "official_format_parser": "PASS",
+    "bytes": 544,
+    "kind": "feature",
+    "display_name": "sm sdk probe",
+    "imports": [
+      "_op1_alloc",
+      "_op1_midi_send"
+    ],
+    "working_screenmirror": false,
+    "installation_ready": false,
+    "hardware_tested": false
+  },
+  "checks": [
+    "Official3.2.3 archive SHA256 +critical extracted build/source identity PASS",
+    "Blackfin officialpack.py compile/link/import +KNPLparse PASS",
+    "Actualop1_midi_send/kn_midi_raw_packet code with ASan+UBSan: shortMIDI works, full/chunkedSysEx not supported PASS",
+    "Source GUI composition review: feature overlays precede text-entry/toasts; final capture not public",
+    "Startup/main/allocator exported services verified against core implementations"
+  ],
+  "changes": {
+    "core_modified": false,
+    "firmware_built": false,
+    "device_connected_by_tools": false,
+    "device_changed": false,
+    "opus_project_modified": false
+  },
+  "files": {
+    "research/screenmirror-sdk/README.md": "302bbba83fce1f1f9949a2605d816c5994334683e41a4ce9245f137603a56ba7",
+    "research/screenmirror-sdk/REPORT.md": "6098f5c4f8f1c3938e562434b4b97a5380139027a8049366d4733fa30885d0cb",
+    "research/screenmirror-sdk/artifacts/sm_sdk_probe.knl": "95a8cb14e3efae3cb8a508b28f4addc4235625774df8262cdc0c5dd4eba7be08",
+    "research/screenmirror-sdk/bootstrap_sdk.py": "43551d859affe669f28c93038ee0a552ee70c0ad7f82de0a8c359b8da0abb1db",
+    "research/screenmirror-sdk/build-probe.sh": "72a7edefd2662a0868025d67f84e3f63ad35d0365912da1a1ac1f119134a1725",
+    "research/screenmirror-sdk/probe/sm_sdk_probe/plugin.json": "0f589add88ec36c8222a5aa3cd8262ea12185499f85bdc0819b41a6752828789",
+    "research/screenmirror-sdk/probe/sm_sdk_probe/probe.c": "edc9f46f3615e94e8ec6e6eaf0c2506c0e92b837f8d4d75d61c6ee95cd7d0db2",
+    "research/screenmirror-sdk/tests/test_usb_contract.py": "ed36e810d6bdfb54cfa413a0c4b9ff159fd69c17c6a34868acda340424cd2b7d"
+  }
+}
